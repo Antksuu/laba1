@@ -1,27 +1,18 @@
 package com.company;
 
-import java.io.*;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
 public class Main {
-    public File getFile() {
-        return file;
-    }
 
     private final File file = new File("C://Flow//currentdata.txt");
-
-    /**
-     * public static synchronized void F
-     * {
-     * <p>
-     * }
-     */
 
     public static void main(String[] args) throws InterruptedException {
 
