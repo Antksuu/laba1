@@ -31,7 +31,7 @@ public class Main {
         flow1.start();
         flow2.start();
 
-        Thread.sleep(1500);
+        Thread.sleep(65000);
         flow1.interrupt();
         flow2.interrupt();
 
@@ -43,7 +43,7 @@ public class Main {
         for (byte b : text.getBytes(StandardCharsets.UTF_8)) {
             writer.write(b);
             writer.flush();
-            Thread.sleep(1);
+            Thread.sleep(200);
         }
         Calendar gi = Calendar.getInstance();
         writer.write(String.valueOf(gi.getTime()));
@@ -96,6 +96,7 @@ class Flow1 extends Thread {
         while (!isInterrupted()) {
             try {
                 main.writeStringToFile();
+                Thread.sleep(1000);
             } catch (IOException | InterruptedException ex) {
                 break;
             }
@@ -116,6 +117,7 @@ class Flow2 extends Thread {
     public void run() {
         while (!isInterrupted()) {
             try {
+                Thread.sleep(15000);
                 main.writeAnotherFile();
             } catch (InterruptedException ex) {
                 break;
